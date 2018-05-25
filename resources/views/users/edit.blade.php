@@ -11,7 +11,7 @@
             </div>
             @include('common.errors')
             <div class="panel-body">
-                <form action="{{ route('users.update',$user->id) }}" method="POST">
+                <form action="{{ route('users.update',$user->id) }}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{ method_field('PUT') }}
                     
@@ -26,6 +26,15 @@
                     <div class="form-group">
                         <label for="introduction-field">个人简介</label>
                         <textarea name="introduction" id="introduction-field"  rows="3" class="form-control" vaule="{{ old('email',$user->introduction) }}"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="avatar-label"></label>
+                        <input type="file" name="avatar">
+
+                        @if($user->avatar)
+                            <br>
+                            <img src="{{ $user->avatar }}" class="thumbnail img-reponsive" width="200px" alt="">
+                        @endif
                     </div>
                     <div class="well well-sm">
                         <button class="btn btn-primary" type="submit">保存</button>
