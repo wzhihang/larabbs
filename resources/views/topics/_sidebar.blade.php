@@ -1,7 +1,7 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: han
- * Date: 2018/5/25
- * Time: 16:13
- */
+<div class="panel panel-default">
+    <div class="panel-body">
+        <a href="{{ route('topics.create') }}" class="btn btn-success btn-block">
+            <span class="glyphicon glyphicon-pencil"></span>新建帖子
+        </a>
+    </div>
+</div>
