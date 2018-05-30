@@ -9,9 +9,9 @@
             
             <div class="panel-heading">
                 <h1>
-                    <i class="glyphicon glyphicon-edit"></i> Topic /
+                    <i class="glyphicon glyphicon-edit"></i>
                     @if($topic->id)
-                        编辑话题{{$topic->id}}
+                        编辑话题
                     @else
                         创建话题
                     @endif
