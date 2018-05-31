@@ -12,6 +12,7 @@ body {
   font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial,sans-serif;
 }
 
+$inherit : #d8d8d8;
 .navbar-static-top{
   border-color: #e7e7e7;
   background-color: #fff;
@@ -74,7 +75,7 @@ body{
   }
 }
 
-
+/* User show Page*/
 .users-show-page{
   .user-info{
     .thumbnail{
@@ -96,12 +97,17 @@ body{
 
       .meta{
         color:#b3b3b3;
+        font-size: 0.9em;
       }
     }
   }
 
   .pagination{
-    margin-top: 12px 0px;
+    margin: 12px 0;
+  }
+
+  .reply-content{
+    margin: 6px 0;
   }
 }
 
@@ -157,3 +163,18 @@ body{
     }
   }
 }
+
+.topic-reply{
+  .meta{
+    font-size: 0.9em;
+    color: #b3b3b3;
+  }
+  .hr{
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .a{
+    color:inherit;
+  }
+}
+
