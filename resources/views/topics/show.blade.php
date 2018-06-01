@@ -31,7 +31,7 @@
                 <div class="article-meida text-center">
                     {{ $topic->created_at->diffForHumans() }}
                     ⋅
-                    <span class="glyphicon glyphicon-commment" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
                     {{ $topic->reply_count }}
                 </div>
 
@@ -61,7 +61,7 @@
         {{--用户回复列表--}}
         <div class="panel panel-default topic-reply">
             <div class="panel-body">
-                @include('topics._reply_box',['topic'=>$topic])
+                @includewhen(Auth::check(),'topics._reply_box',['topic'=>$topic])
                 @include('topics._reply_list',['replies'=>$topic->replies()->with('user')->get()])
             </div>
         </div>
