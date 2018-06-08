@@ -23,13 +23,13 @@ trait ActiveUserHelper
 
     //缓存信息
     protected $cache_key = 'larabbs_active_users';
-    protected $cache_expire_in_minures = 65;
+    protected $cache_expire_in_minutes = 65;
 
     public function getActiveUsers()
     {
         // 尝试从缓存中取出 cache_key 对应数据,如果能取到,直接返回数据
         // 否则通过匿名函数取出活跃用户数据,返回时做了缓存
-        return Cache::remember($this->cache_key, $this->cache_expire_in_minures, function(){
+        return Cache::remember($this->cache_key, $this->cache_expire_in_minutes, function(){
            return $this->calculateActiveUsers();
         });
     }
@@ -110,6 +110,6 @@ trait ActiveUserHelper
 
     private function cacheActiveUsers($active_users)
     {
-        Cache::put($this->cache_key, $active_users, $this->cache_expire_in_minures);
+        Cache::put($this->cache_key, $active_users, $this->cache_expire_in_minutes);
     }
 }
